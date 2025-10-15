@@ -1,36 +1,53 @@
 package com.uniajc;
 
-import java.util.List;
-
 public class Mago extends Criatura implements Magico {
-    private List<String> hechizos;
-    
-    public Mago(String nombre, int salud, int fuerza) {
+    private String hechizo; 
+
+    public Mago(String nombre, int salud, int fuerza, String hechizo) {
         super(nombre, salud, fuerza);
-        this.hechizos = new ArrayList<>();
-    }
-
-    @Override
-    public void lanzarHechizo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'lanzarHechizo'");
-    }
-
-    @Override
-    public void aprenderHechizo() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'aprenderHechizo'");
+        this.hechizo = hechizo;
     }
 
     @Override
     public void atacar(Criatura objetivo) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atacar'");
+    int daño = fuerza;
+
+    if (arma != null) {
+        daño = daño + arma.atacarConArma(objetivo);
     }
+
+    if (hechizo == null) {
+        System.out.println(nombre + " ataca con magia básica y causa " + daño + " de daño a " + objetivo.nombre);
+    } else {
+        System.out.println(nombre + " lanza el hechizo " + hechizo + " y causa " + daño + " de daño a " + objetivo.nombre);
+    }
+
+    objetivo.defender(daño);
+}
 
     @Override
     public void defender(int daño) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'defender'");
+        salud -= daño;
+        System.out.println(nombre + " recibe " + daño + " de daño. Salud restante: " + salud + ".");
     }
+
+    @Override
+    public void lanzarHechizo() {
+        if (hechizo == null) {
+            System.out.println(nombre + " intenta lanzar un hechizo, pero no conoce ninguno.");
+        } else {
+            System.out.println(nombre + " lanza su hechizo: " + hechizo + "!");
+        }
+    }
+
+    @Override
+    public void aprenderHechizo() {
+        this.hechizo = " Lluvia Infernal !!!!"; 
+        System.out.println(nombre + " ha aprendido el hechizo de : " + hechizo);
+    }
+
+
+
+
+
 }
