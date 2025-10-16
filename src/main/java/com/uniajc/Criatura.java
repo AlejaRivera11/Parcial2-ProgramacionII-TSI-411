@@ -1,11 +1,12 @@
 package com.uniajc;
 
 abstract class Criatura {
+    // ATRIBUTOS COMUNES
     protected String nombre;
     protected int salud;
     protected int fuerza;
     protected Arma arma;
-
+    // CONSTRUCTOR
     public Criatura(String nombre, int salud, int fuerza) {
         this.nombre = nombre;
         this.salud = salud;
