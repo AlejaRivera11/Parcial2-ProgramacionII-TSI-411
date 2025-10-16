@@ -12,6 +12,16 @@ abstract class Criatura {
         this.fuerza = fuerza;
     }
 
+    // METODOS GETTERS
+    public int getSalud () {
+        return salud;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    // METODOS ABSTRACTOS
     public abstract void atacar(Criatura objetivo);
     public abstract void defender(int daño);
 
@@ -30,4 +40,5 @@ abstract class Criatura {
         this.arma = null;
     }
 
+    
 }   
