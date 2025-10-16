@@ -10,6 +10,7 @@ public class Dragon extends Criatura implements volador {
         this.arma = arma;
     }
 
+
     @Override
     public void atacar(Criatura objetivo) {
         int daño = fuerza * 2;
