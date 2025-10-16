@@ -4,7 +4,7 @@ public class Arma {
     
     private String nombre;
     private int dañoAdicional;
-
+    //constructor
     public Arma(String nombre, int dañoAdicional) {
         this.nombre = nombre;
         this.dañoAdicional = dañoAdicional;
@@ -24,10 +24,11 @@ public class Arma {
     }
 
 
-
+    //método para atacar con el arma
     public int atacarConArma(Criatura objetivo) {
         return dañoAdicional;
     }
+    //getter para dañoAdicional
     public int getDañoAdicional() {
         return dañoAdicional;
     }
