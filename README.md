@@ -1,6 +1,6 @@
 # Parcial 2 - Programación II (TSI-411)
 
-##Nombres:  
+## Nombres:  
 - **Sebastian Medellin Quintero**  
 - **Alejandra Rivera Montero**  
 
